@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Docentes</title>
+    <link href="static/estilos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2fd447c697.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<h1>Lista de docentes</h1>
+<div>
+    Total de docentes: {{total_docentes}}
+</div>
+<br/>
+<div>
+    <a href="agregar2">Agregar docente</a>
+</div>
+<br/>
+<div>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Email</th>
+                <th>Edad</th>
+                <th><i class="fa-solid fa-eye"></i></th>
+                <th><i class="fa-sharp fa-solid fa-user-pen"></i></th>
+                <th><i class="fa-sharp fa-solid fa-trash"></i></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for docente in docentes %}
+        <tr>
+            <td>{{docente.id}}</td>
+            <td>{{docente.nombre}}</td>
+            <td>{{docente.apellido}}</td>
+            <td>{{docente.email}}</td>
+            <td>{{docente.edad}}</td>
+            <td><a href="ver2/{{docente.id}}">Ver</a></td>
+            <td><a href="editar2/{{docente.id}}">Editar</a></td>
+            <td><a href="eliminar2/{{docente.id}}">Eliminar</a></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <br/>
+    <a href="{{url_for('inicio')}}">Regresar al inicio</a>
+</div>
+</body>
+</html>

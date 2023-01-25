@@ -1,0 +1,24 @@
+ python -m pip install flask
+ python -m pip install flask-sqlalchemy
+ python -m pip install flask-migrate
+ python -m pip install flask-login
+ python -m pip install psycopg2
+ creamos la bd y creamos las tablas con python
+ # creamos la carpeta de migrations para terminar de configurar la bd
+ flask db init 
+ # creamos el archivo del mapeo que contiene la sentencia sql para  la creacion de la tabla de la bd o para hacer cambios
+ flask db migrate
+ # guardamos los cambios en la bd (postgres)
+ flask db upgrade
+ # verificamos que todo este actualizado en la ultima version al momento para que no genere errores
+ flask db stamp head
+ # ponemos nuestro ambiente en modo desarrollador
+ export FLASK_ENV=development
+ # arrancamos el servidor
+ flask --debug run
+ # instalamos extension para formularios
+ python -m pip install flask-wtf
+ 
+  --LOGIN--
+ user: Geovanni
+ pass: pass123

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ver alumno</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <link href="../static/styles.css" rel="stylesheet">
+</head>
+<body>
+<h1>Ver alumno</h1>
+<p>Id: {{alumno.id}}</p>
+<p>Nombre: {{alumno.nombre}}</p>
+<p>Apellido: {{alumno.apellido}}</p>
+<p>Email: {{alumno.email}}</p>
+<br/>
+<a href="{{url_for('estudiantes')}}">Regresar</a>
+</body>
+</html>

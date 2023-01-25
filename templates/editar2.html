@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar docente</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <link href="../static/estilos2.css" rel="stylesheet">
+</head>
+<body>
+<h1>Editar docente</h1>
+<form method="POST">
+  <!-- agregamos el token para la validación con la secret-key de flask-wft-->
+  {{forma.csrf_token}}
+    <p>
+      {{forma.nombre.label}} <br/>
+      {{forma.nombre(size=30)}}
+    </p>
+    <p>
+      {{forma.apellido.label}} <br/>
+      {{forma.apellido(size=30)}}
+    </p>
+    <p>
+      {{forma.email.label}} <br/>
+      {{forma.email(size=30)}}
+    </p>
+    <p>
+      {{forma.edad.label}} <br/>
+      {{forma.edad(size=30)}}
+    </p>
+    <p class="boton">
+      {{forma.enviar()}}
+    </p>
+</form>
+<a href="{{url_for('docentes')}}">Regresar</a>
+</body>
+</html>
